@@ -1,0 +1,188 @@
+/* General Navbar Styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0rem 4rem;
+    width: 100%;
+    position: fixed;
+    top: 0.8rem;
+    left: 0;
+    z-index: 1000;
+    text-transform: uppercase;
+    
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgb(5, 201, 205);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-family: "Chokokutai", system-ui;
+    text-shadow: 0px 0px 10px rgba(54, 59, 65, 0.3);
+    border-radius: 20px;
+}
+
+.Nlinks {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    background: rgba(255, 243, 220, 0.61);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(28px);
+    box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+}
+
+.Nlinks a {
+    text-decoration: none;
+    color: rgba(5,61,83,1);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.HireButton {
+    display: flex;
+}
+
+/* Button Styling */
+.HireButton button {
+    padding: 0.7rem 1.3rem;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #1D77E2, #E2881D);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(29, 119, 226, 0.3);
+    
+}
+
+.HireButton button:hover {
+    background: linear-gradient(45deg, #E2881D, #1D77E2);
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+/* Container for middle links */
+.nav-middle {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 0.8rem 1.5rem;
+        background: rgba(148, 132, 32, 0.8);
+        backdrop-filter: blur(10px);
+        top: 0;
+    }
+
+    .nav-middle {
+        display: none;
+    }
+
+    .Nlinks {
+        display: none;
+    }
+
+    .Nlinks.mobile {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        gap: 2rem;
+        z-index: 99;
+    }
+
+    .HireButton {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Styling for active links in mobile */
+    .Nlinks.mobile a {
+        font-size: 1.3rem;
+        color: white;
+        padding: 1rem 2rem;
+        width: 80%;
+        text-align: center;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .Nlinks.mobile a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hamburger menu styling */
+    .hamburger {
+        z-index: 100;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 2px;
+        margin: 6px 0;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+
+    /* Animated hamburger when menu is open */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+}

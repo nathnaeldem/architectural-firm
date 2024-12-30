@@ -1,0 +1,249 @@
+.announcements-container {
+  padding-top: 80px;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: alicergba(9, 81, 117, 0.5);
+  color:rgb(255, 255, 255);
+}
+
+.announcements-hero {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 243, 220, 0.61);
+  backdrop-filter: blur(20px);
+  margin: 0 50px 4rem 50px;
+  border-radius: 20px;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  background: rgba(9, 81, 117, 0.5);
+  color: var(--text-white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: orange;
+}
+
+.announcements-section,
+.vacancies-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.announcement-card {
+  background: rgba(9, 81, 117, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.announcement-date {
+  color: var(--primary-orange);
+  margin-bottom: 1rem;
+}
+
+.vacancy-card {
+  background: rgba(9, 81, 117, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vacancy-card:hover {
+  transform: translateY(-5px);
+}
+
+.vacancy-location,
+.vacancy-type {
+  color: var(--text-white);
+  margin: 0.5rem 0;
+}
+
+.apply-btn {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.application-form-container {
+  background: rgba(9, 81, 117, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.application-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-white);
+}
+
+.file-upload label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-white);
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .tabs-container {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  .application-form-container {
+    margin: 2rem;
+  }
+} 
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.application-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim the background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.application-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  position: relative;
+  max-height: 95vh;
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.application-modal::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.application-modal::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2); /* Scrollbar thumb color */
+  border-radius: 8px; /* Rounded scrollbar thumb */
+}
+
+.application-modal::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3); /* Scrollbar thumb hover effect */
+}
+
+.application-modal::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Scrollbar track color */
+}
+input.error, textarea.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group input[type="file"].error {
+  border-color: #ff0000;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: block;
+}

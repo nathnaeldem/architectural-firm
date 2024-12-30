@@ -1,0 +1,7 @@
+{
+    "name": "mr_x/arega",
+    "description": "composer",
+    "require": {
+        "firebase/php-jwt": "^6.10"
+    }
+}
